@@ -33,7 +33,7 @@ public class ConfirmationPopUpController implements Initializable {
 
     public void okPressed(Event event){
         try {
-            Parent list = FXMLLoader.load(getClass().getResource("../../resources/InventoryMainMenu.fxml"));
+            Parent list = FXMLLoader.load(getClass().getResource("/InventoryMainMenu.fxml"));
             Scene okScene = new Scene(list);
             Stage okStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             okStage.hide();
@@ -47,7 +47,7 @@ public class ConfirmationPopUpController implements Initializable {
     }
     public void cancelPressed(Event event){
         try {
-            Parent list = FXMLLoader.load(getClass().getResource("../../resources/AddProductMenu.fxml"));
+            Parent list = FXMLLoader.load(getClass().getResource("/AddProductMenu.fxml"));
             Scene cancelScene = new Scene(list);
             Stage cancelStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             cancelStage.hide();

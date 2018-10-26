@@ -12,7 +12,7 @@ import java.io.IOException;
 public class SearchFormController {
     public void search(Event event){
         try {
-            Parent list = FXMLLoader.load(getClass().getResource("../../resources/InventoryList.fxml"));
+            Parent list = FXMLLoader.load(getClass().getResource("/InventoryList.fxml"));
             Scene invScene = new Scene(list);
             Stage invStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             invStage.hide();
@@ -26,7 +26,7 @@ public class SearchFormController {
     }
     public void cancelSearch(Event event){
         try {
-            Parent list = FXMLLoader.load(getClass().getResource("../../resources/InventoryList.fxml"));
+            Parent list = FXMLLoader.load(getClass().getResource("/InventoryList.fxml"));
             Scene cancelScene = new Scene(list);
             Stage cancelStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             cancelStage.hide();

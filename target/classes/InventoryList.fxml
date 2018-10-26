@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import com.jfoenix.controls.JFXToolbar?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -9,15 +10,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="670.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.InventoryListController">
+<AnchorPane prefHeight="670.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.InventoryListController">
    <children>
       <JFXToolbar prefHeight="61.0" prefWidth="900.0" style="-fx-background-color: #d3d3d3;">
          <left>
-            <Button id="tableBackBtn" mnemonicParsing="false" text="Back" BorderPane.alignment="CENTER" onAction="#backToMainMenu"/>
+            <Button id="tableBackBtn" mnemonicParsing="false" onAction="#backToMainMenu" text="Back" BorderPane.alignment="CENTER" />
          </left>
          <right>
-            <Button id="tableEditBtn" mnemonicParsing="false" text="Edit" BorderPane.alignment="CENTER" onAction="#editEntry" />
+            <Button id="tableEditBtn" mnemonicParsing="false" onAction="#editEntry" text="Edit" BorderPane.alignment="CENTER" />
          </right>
          <center>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Threads Clothing Inventory" BorderPane.alignment="CENTER">
@@ -30,14 +30,14 @@
             <Insets left="20.0" right="20.0" />
          </padding>
       </JFXToolbar>
-      <TableView id="productTable" layoutX="-2.0" layoutY="63.0" prefHeight="558.0" prefWidth="903.0">
+      <TableView id="productTable" fx:id="myTableView" layoutX="-2.0" layoutY="63.0" prefHeight="558.0" prefWidth="903.0">
         <columns>
-          <TableColumn id="itemNumCol" prefWidth="75.0" text="Item Number" />
-          <TableColumn id="prodNumCol" prefWidth="75.0" text="Product Number" />
-            <TableColumn id="prodNameCol" prefWidth="75.0" text="Product Name" />
-            <TableColumn id="prodPriceCol" prefWidth="75.0" text="Price" />
-            <TableColumn id="prodQtyCol" prefWidth="75.0" text="Quantity" />
-            <TableColumn id="prodTypeCol" prefWidth="75.0" text="Type" />
+          <TableColumn fx:id="itemNumCol" prefWidth="75.0" text="Item Number" />
+          <TableColumn fx:id="prodNumCol" prefWidth="75.0" text="Product Number" />
+            <TableColumn fx:id="prodNameCol" prefWidth="75.0" text="Product Name" />
+            <TableColumn fx:id="prodPriceCol" prefWidth="75.0" text="Price" />
+            <TableColumn fx:id="prodQtyCol" prefWidth="75.0" text="Quantity" />
+            <TableColumn fx:id="prodTypeCol" prefWidth="75.0" text="Type" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -51,7 +51,7 @@
             <Insets left="20.0" right="20.0" />
          </padding>
          <right>
-            <Button id="tableDeleteBtn" mnemonicParsing="false" text="Delete" BorderPane.alignment="CENTER" />
+            <Button id="tableDeleteBtn" mnemonicParsing="false" onAction="#deleteItem" text="Delete" BorderPane.alignment="CENTER" />
          </right>
       </JFXToolbar>
    </children>

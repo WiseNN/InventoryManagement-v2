@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.event.Event;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -17,6 +18,11 @@ public class InventoryMainMenuController{
 
     private static Map<String, Clothing> clothesList = new HashMap<String, Clothing>();
 
+    @FXML
+    public void deleteItem()
+    {
+
+    }
 
     public void viewInventory(Event event){
         try {
@@ -28,6 +34,7 @@ public class InventoryMainMenuController{
             //adminStage.setTitle("Admin Panel");
             invStage.show();
 
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -35,7 +42,7 @@ public class InventoryMainMenuController{
 
     public void addProduct(Event event){
         try {
-            Parent list = FXMLLoader.load(getClass().getResource("../../resources/AddProductMenu.fxml"));
+            Parent list = FXMLLoader.load(getClass().getResource("/AddProductMenu.fxml"));
             Scene addProductScene = new Scene(list);
             Stage addProductStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             addProductStage.hide();
@@ -50,7 +57,7 @@ public class InventoryMainMenuController{
 
     public void searchProduct(Event event){
         try {
-            Parent list = FXMLLoader.load(getClass().getResource("../../resources/SearchForm.fxml"));
+            Parent list = FXMLLoader.load(getClass().getResource("/SearchForm.fxml"));
             Scene invScene = new Scene(list);
             Stage invStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             invStage.hide();
@@ -75,4 +82,7 @@ public class InventoryMainMenuController{
         Clothing c = clothesList.get(nameKey);
         return c;
     }
+
+
+
 }

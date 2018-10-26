@@ -4,10 +4,11 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddProductMenuController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddProductMenuController">
     <children>
         <Label layoutX="208.0" layoutY="14.0" text="Add Product">
             <font>
@@ -37,10 +38,13 @@
             </font>
         </Label>
         <TextField fx:id="productQuantity" layoutX="229.0" layoutY="266.0" prefHeight="26.0" prefWidth="80.0" promptText="0" />
-        <Button fx:id="addButton" layoutX="147.0" layoutY="338.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Add" onAction="#addProduct" />
-        <Button cancelButton="true" layoutX="331.0" layoutY="338.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Cancel" onAction="#cancelEntry" />
-        <RadioButton fx:id="shirt" layoutX="199.0" layoutY="120.0" mnemonicParsing="false" text="Shirt" />
-        <RadioButton fx:id="pants" layoutX="301.0" layoutY="120.0" mnemonicParsing="false" text="Pants" />
+        <Button fx:id="addButton" layoutX="147.0" layoutY="338.0" mnemonicParsing="false" onAction="#addProduct" prefHeight="50.0" prefWidth="150.0" text="Add" />
+        <Button cancelButton="true" layoutX="331.0" layoutY="338.0" mnemonicParsing="false" onAction="#cancelEntry" prefHeight="50.0" prefWidth="150.0" text="Cancel" />
+        <RadioButton fx:id="shirtType" layoutX="199.0" layoutY="120.0" mnemonicParsing="false" selected="true" text="Shirt">
+         <toggleGroup>
+            <ToggleGroup fx:id="productsToggleGroup" />
+         </toggleGroup></RadioButton>
+        <RadioButton fx:id="pantType" layoutX="301.0" layoutY="120.0" mnemonicParsing="false" text="Pant" toggleGroup="$productsToggleGroup" />
     </children>
 
 </AnchorPane>
